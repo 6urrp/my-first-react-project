@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getBlogs } from "../../data/blog-posts.js"
+import { getBlogs } from "../../services/blog-posts.js"
 import { Blog } from "../Blog/Blog.jsx"
 import "./BlogList.css";
 

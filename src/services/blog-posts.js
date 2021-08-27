@@ -6,3 +6,9 @@ export const getBlogs = () => {
     .then(resp => resp.json())
     .then(blogs => blogs)
 }
+
+export const getSingleBlog = (id) => {
+    return fetch(`${endpoint}/${id}`)
+    .then(response => response.json())
+    .then(blog => blog)
+}

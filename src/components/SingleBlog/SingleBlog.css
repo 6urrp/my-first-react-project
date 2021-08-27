@@ -1,0 +1,16 @@
+.single-blog-container {
+    width: 90%;
+    margin: 10px auto;
+    background-color: rgb(182, 178, 173);
+}
+
+h3 {
+    text-indent: 20px;
+    font-size: 1.5em;
+}
+
+h3, p {
+    padding: 10px;
+    color: white;
+}
+

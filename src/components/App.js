@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import { Switch, Route } from "react-router-dom";
 
 import { Header } from "./Header/Header.jsx";
+import SingleBlog from './SingleBlog/SingleBlog.jsx';
 import BlogList from "./BlogList/BlogList"
 import HomePage from './HomePage/HomePage.jsx';
 import AboutPage from './AboutPage/AboutPage.jsx';
@@ -14,7 +15,8 @@ function App() {
       <Switch>
         <Route exact  path="/" component={HomePage} />
         <Route path="/about" component={AboutPage} />
-        <Route path="/blog" component={BlogList} />
+        <Route exact path="/blog" component={BlogList} />
+        <Route path="/blog/:id" component={SingleBlog} />
       </Switch>
     </Fragment>
   );

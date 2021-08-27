@@ -1,47 +1,27 @@
-import React, { Component } from "react";
+import { useEffect, useState } from "react";
 
 import { getBlogs } from "../../data/blog-posts.js"
 import { Blog } from "../Blog/Blog.jsx"
 import "./BlogList.css";
 
 
-class BlogList extends Component {
-    constructor(props) {
-        super(props) 
-        this.state = {
-        blogs: []
-        }
-    }
 
-    componentDidMount () {
+const BlogList = () => {
+    const [blogs, setBlogs] = useState([]);
+
+    useEffect(() => {
         getBlogs()
-            .then(blogs => {
-                this.setState({blogs})
-            })
-    }
+            .then(blogs => setBlogs(blogs))
+    }, [])
 
-    render () {
-        return (
-            <div className="blog-container">
+    return (
+        <div className="blog-container">
                 {
-                this.state.blogs.map((blog,index) => <Blog post={blog} isAutorized={true} key={index}/>)
+                blogs.map((blog,index) => <Blog post={blog} isAutorized={true} key={index}/>)
                 }
 
-            </div>
-        )
-    }
-    
+        </div>
+    )
 }
 
-
-// const BlogList = () => {
-//     return (
-//         <div className="blog-container">
-//             {
-//             blogData.map((blog, index) => <Blog post={blog} isAutorized={true} key={index} /> )
-//             }
-//         </div>
-//     )
-// }
-
-export { BlogList };
+export default BlogList;
